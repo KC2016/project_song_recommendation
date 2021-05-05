@@ -131,7 +131,7 @@ benefit from some remedial studying, please utilize the resources below:
 [8.03_first_prototype.ipynb.zip](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3a5d4306-72ee-4f2a-ba2a-45163a6938aa/8.03_first_prototype.ipynb.zip)
 
 
-![Ironhack logo](02_webscraping_multiple_pages/images/gnod_1st_iteration.jpg)
+![1st_iteration](02_webscraping_multiple_pages/images/gnod_1st_iteration.jpg)
 
 
 
@@ -154,3 +154,44 @@ benefit from some remedial studying, please utilize the resources below:
 - [What is an API Wrapper](https://www.reddit.com/r/explainlikeimfive/comments/4ujkcx/eli5_what_is_an_api_wrapper/)
 - [Python API Wrappers](https://towardsdatascience.com/how-to-get-data-from-apis-with-python-dfb83fdc5b5b)
 - [Using SpotiPy](https://morioh.com/p/31b8a607b2b0)
+
+
+
+## Lab | API wrappers - Create your collection of songs & audio features (Wednesday's lab)
+Instructions
+To move forward with the project, you need to create a collection of songs with their audio features - as large as possible!
+
+These are the songs that we will cluster. And, later, when the user inputs a song, we will find the cluster to which the song belongs and recommend a song from the same cluster. The more songs you have, the more accurate and diverse recommendations you'll be able to give. Although... you might want to make sure the collected songs are "curated" in a certain way. Try to find playlists of songs that are diverse, but also that meet certain standards.
+
+The process of sending hundreds or thousands of requests can take some time - it's normal if you have to wait a few minutes (or, if you're ambitious, even hours) to get all the data you need.
+
+An idea for collecting as many songs as possible is to start with all the songs of a big, diverse playlist and then go to every artist present in the playlist and grab every song of every album of that artist. The amount of songs you'll be collecting per playlist will grow exponentially!
+
+
+
+
+## Spotify
+### Features
+Audio Features & Analysis </br>
+
+Explore audio features and in-depth audio analysis of tracks</br>
+With the Spotify Developer Platform, you’re able to read calculated audio features of tracks to learn about its danceability, energy, valence, and more. For more advanced use cases, it is possible to read in-depth analysis data about tracks such as the segments, tatums, bars, beats, pitches, and more.</br>
+
+Mood: Danceability, Valence, Energy, Tempo</br>
+Properties: Loudness, Speechiness, Instrumentalness</br>
+Context: Liveness, Acousticness</br>
+Segments, Tatums, Bars, Beats, Pitches, Timbre, and more</br>
+
+### Object Index / AlbumObject
+- popularity
+The popularity of the album. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated from the popularity of the album’s individual tracks.	Integer
+- genres
+A list of the genres the artist is associated with. For example: "Prog Rock" , "Post-Grunge". (If not yet classified, the array is empty.)	Array[String]
+- type
+The object type: "artist"	String
+- uri
+The Spotify URI for the artist.	String
+- artists
+The artists of the album. Each artist object includes a link in href to more detailed information about the artist.	Array[ArtistObject]
+- tracks
+The tracks of the album.	Array[SimplifiedTrackObject]
