@@ -195,3 +195,57 @@ The Spotify URI for the artist.	String
 The artists of the album. Each artist object includes a link in href to more detailed information about the artist.	Array[ArtistObject]
 - tracks
 The tracks of the album.	Array[SimplifiedTrackObject]
+
+## Unsupervised ML Introduction/ Discussion (Thursday's Class and Lab)
+### Lesson Overview
+
+Machine Learning algorithms can be broadly classified into Supervised
+ Learning and Unsupervised Learning. In supervised learning algorithms 
+use “labeled” data to train the model and make predictions on unseen 
+data. The labeled data/target variable can be either numerical or 
+categorical in nature, for which we learn regression and classification 
+models respectively. Here we separate the data into dependent and 
+independent variable (aka features and target)
+
+However, with an unsupervised learning algorithm, we do not train the
+ model on “labeled” data. It means that there is no target variable and 
+we do not separate the data into a dependent and independent variable. 
+One of the most popular applications for an unsupervised learning is 
+clustering. Other applications include anomaly detection, dimensionality
+ reduction and visualization
+
+In this lesson, we will introduce unsupervised learning using K-means and perform a simple clustering task.
+
+### Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+- Explain what UL means using appropriate technical vocabulary
+- Interpret the intuition behind K-Means
+- Perform a basic clustering task
+
+### Additional Resources
+
+If you would like to study these concepts before the class or would 
+benefit from some remedial studying, please utilize the resources below:
+
+- [Supervised vs Unsupervised](https://www.springboard.com/blog/lp-machine-learning-unsupervised-learning-supervised-learning/)
+- [Some examples of Unsupervised Learning](https://theappsolutions.com/blog/development/unsupervised-machine-learning/)
+- [Visualizing K Means](https://www.naftaliharris.com/blog/visualizing-k-means-clustering/)
+
+### Lab
+Given the code from the class, play with the parameters of K-means and see how that affects the inertia result.
+You can create for loops to try different combinations of parameters and even plots the resulting inerta's for those parameter ranges
+
+```
+kmeans = KMeans(n_clusters=8,
+                init="random",
+                n_init=3,  # try with 1, 4, 8, 20, 30, 100...
+                max_iter=2,
+                tol=0,
+                algorithm="full",
+                random_state=1234)
+kmeans.fit(X_prep)
+print(kmeans.inertia_)
+
+```
