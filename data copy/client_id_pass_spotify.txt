@@ -1,3 +1,0 @@
-# spotify
-client_id='5c1883b103534b7bb0057960a379e142'
-client_secret='4a64702efea6483e9c05ed48d17cf48c'
